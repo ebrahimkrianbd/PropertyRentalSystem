@@ -5,9 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
@@ -15,10 +13,12 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @Entity
 public class BranchPhone {
+    @Id
+    @GeneratedValue
+    int branchPhoneId;
     @ManyToOne
-    private long brachNumber;
+    private Branch branch;
     @Embedded
     private Phone phone;
     private String brachExtension;
-aaaaaaaa
 }

@@ -18,6 +18,7 @@ import java.time.LocalDate;
 public class Viewing {
     @Id
     @GeneratedValue
+    int viewingId;
     @ManyToOne
     private Property property;
     @ManyToOne

@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -13,8 +13,12 @@ import javax.persistence.Entity;
 @ToString
 @Entity
 public class RenterPhone {
-    long rentarNumber;
-    Phone phone;
-    String renterExtension;
-    ....
+    @Id
+    @GeneratedValue
+    int renterPhoneId;
+    @ManyToOne
+    private Renter renter;
+    @Embedded
+    private Phone phone;
+    private String renterExtension;
 }
