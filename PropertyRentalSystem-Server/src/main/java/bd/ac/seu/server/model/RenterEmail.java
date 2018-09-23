@@ -8,6 +8,8 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
@@ -15,8 +17,11 @@ import javax.persistence.ManyToOne;
 @ToString
 @Entity
 public class RenterEmail {
+    @NotNull
+    @Email
     @Id
     String rentalEmailAddress;
     @ManyToOne
+    @NotNull
     private Renter renter;
 }

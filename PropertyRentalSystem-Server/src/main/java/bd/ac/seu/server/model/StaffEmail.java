@@ -8,6 +8,8 @@ import lombok.ToString;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
@@ -16,7 +18,10 @@ import javax.persistence.ManyToOne;
 @Entity
 public class StaffEmail {
     @Id
+    @NotNull
+    @Email
     private String staffEmailAddess;
     @ManyToOne
+    @NotNull
     private Staff staff;
 }

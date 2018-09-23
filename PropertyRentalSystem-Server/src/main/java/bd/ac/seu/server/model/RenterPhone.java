@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor
@@ -14,11 +15,15 @@ import javax.persistence.*;
 @Entity
 public class RenterPhone {
     @Id
+    @NotNull
     @GeneratedValue
     int renterPhoneId;
     @ManyToOne
+    @NotNull
     private Renter renter;
     @Embedded
+    @NotNull
     private Phone phone;
+    @NotNull
     private String renterExtension;
 }

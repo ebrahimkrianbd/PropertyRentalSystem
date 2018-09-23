@@ -2,17 +2,20 @@ package bd.ac.seu.server.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.Embeddable;
+import javax.validation.constraints.NotNull;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Embeddable
 public class Name {
+    @NotNull
     private String firstName;
+    @NotNull
     private String middleName;
+    @NotNull
     private String lastName;
 }
