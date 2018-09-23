@@ -20,6 +20,6 @@ public class Branch {
     private List<Staff> staffList;
     @Embedded
     private Address address;
-    private Staff brachManger;
+    private String TypeOfStaff;
 
 }

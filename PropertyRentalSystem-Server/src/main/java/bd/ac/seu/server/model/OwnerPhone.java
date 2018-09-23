@@ -17,7 +17,7 @@ public class OwnerPhone {
     @GeneratedValue
     int ownerPhoneId;
     @ManyToOne
-    private long ownerNumber;
+    private Owner owner;
     @Embedded
     private Phone phone;
     private String ownerExtension;

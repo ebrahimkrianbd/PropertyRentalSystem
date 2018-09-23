@@ -18,7 +18,5 @@ public class OwnerEmail {
     @Id
     private String ownerEmailAddress;
     @ManyToOne
-    private long ownerNumber;
-    @ManyToOne
     private Owner owner;
 }
