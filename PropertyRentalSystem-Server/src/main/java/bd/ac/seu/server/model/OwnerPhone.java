@@ -3,6 +3,7 @@ package bd.ac.seu.server.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -21,6 +22,7 @@ public class OwnerPhone {
     private Owner owner;
     @NotNull
     @Embedded
+    @UniqueElements
     private Phone phone;
     @NotNull
     private String ownerExtension;

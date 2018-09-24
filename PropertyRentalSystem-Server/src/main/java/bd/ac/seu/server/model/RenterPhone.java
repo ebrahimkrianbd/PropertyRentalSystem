@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -23,6 +24,7 @@ public class RenterPhone {
     private Renter renter;
     @Embedded
     @NotNull
+    @UniqueElements
     private Phone phone;
     @NotNull
     private String renterExtension;

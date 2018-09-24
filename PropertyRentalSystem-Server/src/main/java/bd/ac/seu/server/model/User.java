@@ -1,26 +1,40 @@
 package bd.ac.seu.server.model;
+import org.hibernate.validator.constraints.UniqueElements;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+
 @Entity
+@Table(name= "user")
 public class User implements UserDetails {
-    @NotNull
     @Id
-    private Long userName;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Min(100000)
+    @Max(999999)
+    private int id;
+
+    @NotNull
+    @UniqueElements
+    private String userName;
+
     @NotNull
     private String password;
+
     @NotNull
     private String role;
+
     @NotNull
     private boolean enable;
-    @NotNull
-    private boolean locked;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created_time;
 //    @ManyToOne
 //    private List<GrantedAuthority> authorityList;
 
@@ -31,17 +45,17 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return userName;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
@@ -56,6 +70,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return enable;
     }
 }

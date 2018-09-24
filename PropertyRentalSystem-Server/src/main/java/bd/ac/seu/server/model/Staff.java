@@ -16,26 +16,37 @@ public class Staff {
     @NotNull
     @Id
     private long staffNumber;
+
+    @OneToOne
+    private User user;
+
     @NotNull
     @ManyToOne
     private Branch branch;
+
     @NotNull
     @OneToMany
     private List<Property> propertyList;
+
     @NotNull
     @OneToMany
     private List<StaffPhone> staffPhoneList;
+
     @NotNull
     @OneToMany
     private List<StaffEmail> staffEmailList;
+
     @NotNull
     @Embedded
     private Name name;
+
     @NotNull
     @Embedded
     private Address address;
+
     @NotNull
     private double Salary;
+
     @NotNull
     @Enumerated
     private Gender gender;
