@@ -1,7 +1,6 @@
 package bd.ac.seu.server.service;
 
 import bd.ac.seu.server.exception.ResourceAlreadyExistException;
-import bd.ac.seu.server.exception.ResourceDoesnotExistException;
 import bd.ac.seu.server.model.Branch;
 import bd.ac.seu.server.repository.BranchRepository;
 import org.springframework.stereotype.Service;
