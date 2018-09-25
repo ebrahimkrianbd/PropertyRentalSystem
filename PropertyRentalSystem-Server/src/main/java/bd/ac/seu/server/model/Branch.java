@@ -23,5 +23,4 @@ public class Branch {
     private Address address;
     @NotNull
     private String TypeOfStaff;
-
 }
