@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -15,13 +16,8 @@ import java.util.List;
 @Table(name= "user")
 public class User implements UserDetails {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Min(100000)
-    @Max(999999)
-    private int id;
-
     @NotNull
-    @UniqueElements
+    @Size(min = 6,max = 15)
     private String userName;
 
     @NotNull
