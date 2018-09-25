@@ -34,7 +34,7 @@ public class BranchService {
         return branchRepository.findById(id).get();
     }
 
-    public Branch createCarUsingBranch(int id, Branch branch){
+    public Branch createCarUsingBranch(long id, Branch branch){
         Optional<Branch> optionalBranch = branchRepository.findById(id);
         if(optionalBranch.isPresent()){
             return branchRepository.save(branch);
