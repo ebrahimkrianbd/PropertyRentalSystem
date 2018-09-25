@@ -6,6 +6,7 @@ import lombok.ToString;
 
 import javax.persistence.Embeddable;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
@@ -13,9 +14,10 @@ import javax.validation.constraints.NotNull;
 @Embeddable
 public class Name {
     @NotNull
+    @Size(min = 4, max = 20)
     private String firstName;
-    @NotNull
+    @Size(min = 4, max = 20)
     private String middleName;
-    @NotNull
+    @Size(min = 4, max = 20)
     private String lastName;
 }

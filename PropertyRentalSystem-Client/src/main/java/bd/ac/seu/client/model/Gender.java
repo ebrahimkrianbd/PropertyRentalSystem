@@ -1,4 +1,4 @@
-package bd.ac.seu.server.model;
+package bd.ac.seu.client.model;
 
 public enum Gender {
     MALE,

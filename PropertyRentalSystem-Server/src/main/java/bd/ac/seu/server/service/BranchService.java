@@ -34,14 +34,4 @@ public class BranchService {
         return branchRepository.findById(id).get();
     }
 
-    public Branch createCarUsingBranch(long id, Branch branch){
-        Optional<Branch> optionalBranch = branchRepository.findById(id);
-        if(optionalBranch.isPresent()){
-            return branchRepository.save(branch);
-        }
-        else{
-            throw new ResourceDoesnotExistException("branch is not exist with id = "
-                    +branch.getBranchNumber());
-        }
-    }
 }
